@@ -1,37 +1,33 @@
 
-// 1. Dinamicly add HTML content to the main gallery:
-
-// 2. Arranging CSS (in styles.css file):
-
-// 3. Get and display 12 random users from The Random User Generator API:
+// 1. Get and display 12 random users from The Random User Generator API:
 
 // a. Fetch data from random employee API:
-fetch('https://randomuser.me/api/')
+fetch('https://randomuser.me/api/?results=12')
     .then( response => response.json() )
-    .then( data => getData(data.results[0]) )
+    .then( data => getData(data.results) )
 
 // b. Function to handle data from API:
 function getData(data) {
-//    for (let i = 0; i < 12; i++ ) {
+    for (let i = 0; i < data.length; i++ ) {
     const html = `
     <div class="card">
     <div class="card-img-container">
-        <img class="card-img" src="${data.picture.thumbnail}" alt="profile picture">
+        <img class="card-img" src="${data[i].picture.thumbnail}" alt="profile picture">
     </div>
     <div class="card-info-container">
-        <h3 id="name" class="card-name cap">${data.name.first} ${data.name.last}</h3>
-        <p class="card-text">${data.email}</p>
-        <p class="card-text cap">${data.location.city}, ${data.location.state}</p>
+        <h3 id="name" class="card-name cap">${data[i].name.first} ${data[i].name.last}</h3>
+        <p class="card-text">${data[i].email}</p>
+        <p class="card-text cap">${data[i].location.city}, ${data[i].location.state}</p>
     </div>
 </div>
     `;
-
+    // Dinamicly add HTML content to the main gallery:
     document.getElementById('gallery').insertAdjacentHTML('beforeend', html );
-//    }
+    }
 }
 
 
-// 4. Create a modal window:
+// 2. Create a modal window:
 
 
 
