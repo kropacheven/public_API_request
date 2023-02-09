@@ -1,12 +1,18 @@
 
 // 1. Get and display 12 random users from The Random User Generator API:
 
-// a. Fetch data from random employee API:
+// a. Fetch data from random employee external API:
 fetch('https://randomuser.me/api/?results=12')
     .then( response => response.json() )
     .then( data => getData(data.results) )
 
-// b. Function to handle data from API:
+
+/**
+ * b. Function to handle data from external API.
+ *
+ * @param {array} data - An array of objects that will be fetched from external API
+ * @return Injects necessary information from array into predefinedHTML template
+ */
 function getData(data) {
     for (let i = 0; i < data.length; i++ ) {
     const html = `
