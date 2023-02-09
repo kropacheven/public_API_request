@@ -12,6 +12,7 @@ fetch('https://randomuser.me/api/')
 
 // b. Function to handle data from API:
 function getData(data) {
+//    for (let i = 0; i < 12; i++ ) {
     const html = `
     <div class="card">
     <div class="card-img-container">
@@ -24,7 +25,9 @@ function getData(data) {
     </div>
 </div>
     `;
-    document.getElementById('gallery').innerHTML = html;
+
+    document.getElementById('gallery').insertAdjacentHTML('beforeend', html );
+//    }
 }
 
 
