@@ -35,7 +35,9 @@ function getData(data) {
 
 // 2. Create a modal window:
 
+// a. Function:
 
+// b. Event listener:
 
 
 
@@ -44,5 +46,3 @@ function getData(data) {
 // 1. Programm search bar element:
 
 // 2. Programm modal toggle:
-
-// 3. Structure, style and CSS:
