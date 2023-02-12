@@ -35,9 +35,9 @@ function getData(data) {
 
 // 2. Create a modal window:
 
-// a. Function:
+// a. Function for modal view:
 
-// b. Event listener:
+// b. Event listener for modal view display:
 
 
 
