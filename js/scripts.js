@@ -33,7 +33,7 @@ function getData(data) {
 }
 
 
-// 2. Create a modal window:
+// 2. Create a modal window for chosen employee:
 
 // a. Function for modal view:
 
