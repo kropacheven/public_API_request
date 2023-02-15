@@ -1,3 +1,7 @@
+// Global variables for HTML capture: 
+const gallery = document.getElementById('gallery');
+
+
 
 // 1. Get and display 12 random users from The Random User Generator API:
 
@@ -28,7 +32,7 @@ function getData(data) {
 </div>
     `;
     // Dinamicly add HTML content to the main gallery:
-    document.getElementById('gallery').insertAdjacentHTML('beforeend', html );
+    gallery.insertAdjacentHTML('beforeend', html );
     }
 }
 
