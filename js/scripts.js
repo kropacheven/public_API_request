@@ -43,25 +43,27 @@ function getData(data) {
 // a. Function for modal view:
 
 function displayModal(index) {
-
+    //object destructuring for cleaner code:
+    let {dob, email, location, name, phone, picture} = employees[index];
     const modalHTML = 
     `
     <div class="modal-container">
     <div class="modal">
         <button type="button" id="modal-close-btn" class="modal-close-btn"><strong>X</strong></button>
         <div class="modal-info-container">
-            <img class="modal-img" src="https://placehold.it/125x125" alt="profile picture">
-            <h3 id="name" class="modal-name cap">name</h3>
-            <p class="modal-text">email</p>
-            <p class="modal-text cap">city</p>
+            <img class="modal-img" src="${picture.medium}" alt="profile picture">
+            <h3 id="name" class="modal-name cap">${name.first} ${name.last}</h3>
+            <p class="modal-text">${email}</p>
+            <p class="modal-text cap">${location.city}</p>
             <hr>
-            <p class="modal-text">(555) 555-5555</p>
-            <p class="modal-text">123 Portland Ave., Portland, OR 97204</p>
-            <p class="modal-text">Birthday: 10/21/2015</p>
+            <p class="modal-text">${phone}</p>
+            <p class="modal-text">${location.street}, ${location.city}, ${location.state} ${location.postcode}</p>
+            <p class="modal-text">Birthday: ${dob.date}</p>
         </div>
     </div>
     </div>
     `;
+    gallery.insertAdjacentHTML('afterend', modalHTML);
 
 }
 
@@ -72,9 +74,9 @@ gallery.addEventListener('click', (event) => {
        const card =  event.target.closest('.card');
        // capturing the index of the card of the clicked element
        const index = card.getAttribute('data-index');
-       console.log(card);
-       console.log(index);
-       //displayModal(index);
+       //console.log(card);
+       //console.log(index);
+       displayModal(index);
     }
 });
 
