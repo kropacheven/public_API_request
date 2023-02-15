@@ -1,6 +1,6 @@
 // Global variables for HTML capture: 
 const gallery = document.getElementById('gallery');
-
+let employees = [];
 
 
 // 1. Get and display 12 random users from The Random User Generator API:
@@ -18,6 +18,7 @@ fetch('https://randomuser.me/api/?results=12')
  * @return Injects necessary information from array into predefinedHTML template
  */
 function getData(data) {
+    employees = data;
     for (let i = 0; i < data.length; i++ ) {
     const html = `
     <div class="card" data-index=${i}>
@@ -41,10 +42,35 @@ function getData(data) {
 
 // a. Function for modal view:
 
+function displayModal(index) {
+
+    const modalHTML = 
+    `
+    <div class="modal-container">
+    <div class="modal">
+        <button type="button" id="modal-close-btn" class="modal-close-btn"><strong>X</strong></button>
+        <div class="modal-info-container">
+            <img class="modal-img" src="https://placehold.it/125x125" alt="profile picture">
+            <h3 id="name" class="modal-name cap">name</h3>
+            <p class="modal-text">email</p>
+            <p class="modal-text cap">city</p>
+            <hr>
+            <p class="modal-text">(555) 555-5555</p>
+            <p class="modal-text">123 Portland Ave., Portland, OR 97204</p>
+            <p class="modal-text">Birthday: 10/21/2015</p>
+        </div>
+    </div>
+    </div>
+    `;
+
+}
+
 // b. Event listener for modal view display:
 gallery.addEventListener('click', (event) => {
     if (event.target !== gallery) {
+       // selecting the card element based on its proximity to actual element that is clicked
        const card =  event.target.closest('.card');
+       // capturing the index of the card of the clicked element
        const index = card.getAttribute('data-index');
        console.log(card);
        console.log(index);
