@@ -20,7 +20,7 @@ fetch('https://randomuser.me/api/?results=12')
 function getData(data) {
     for (let i = 0; i < data.length; i++ ) {
     const html = `
-    <div class="card">
+    <div class="card" data-index=${i}>
     <div class="card-img-container">
         <img class="card-img" src="${data[i].picture.thumbnail}" alt="profile picture">
     </div>
@@ -42,7 +42,15 @@ function getData(data) {
 // a. Function for modal view:
 
 // b. Event listener for modal view display:
-
+gallery.addEventListener('click', (event) => {
+    if (event.target !== gallery) {
+       const card =  event.target.closest('.card');
+       const index = card.getAttribute('data-index');
+       console.log(card);
+       console.log(index);
+       //displayModal(index);
+    }
+});
 
 
 // ---------------------------------------  Extra Credit --------------------------- //
