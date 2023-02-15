@@ -1,6 +1,8 @@
-// Global variables for HTML capture: 
+// Global variables: 
 const gallery = document.getElementById('gallery');
 let employees = [];
+
+
 
 
 // 1. Get and display 12 random users from The Random User Generator API:
@@ -41,30 +43,33 @@ function getData(data) {
 // 2. Create a modal window for chosen employee:
 
 // a. Function for modal view:
-
 function displayModal(index) {
     //object destructuring for cleaner code:
     let {dob, email, location, name, phone, picture} = employees[index];
     const modalHTML = 
     `
     <div class="modal-container">
-    <div class="modal">
-        <button type="button" id="modal-close-btn" class="modal-close-btn"><strong>X</strong></button>
-        <div class="modal-info-container">
-            <img class="modal-img" src="${picture.medium}" alt="profile picture">
-            <h3 id="name" class="modal-name cap">${name.first} ${name.last}</h3>
-            <p class="modal-text">${email}</p>
-            <p class="modal-text cap">${location.city}</p>
-            <hr>
-            <p class="modal-text">${phone}</p>
-            <p class="modal-text">${location.street}, ${location.city}, ${location.state} ${location.postcode}</p>
-            <p class="modal-text">Birthday: ${dob.date}</p>
+        <div class="modal">
+            <button type="button" id="modal-close-btn" class="modal-close-btn"><strong>X</strong></button>
+            <div class="modal-info-container">
+                <img class="modal-img" src="${picture.medium}" alt="profile picture">
+                <h3 id="name" class="modal-name cap">${name.first} ${name.last}</h3>
+                <p class="modal-text">${email}</p>
+                <p class="modal-text cap">${location.city}</p>
+                <hr>
+                <p class="modal-text">${phone}</p>
+                <p class="modal-text">${location.street}, ${location.city}, ${location.state} ${location.postcode}</p>
+                <p class="modal-text">Birthday: ${dob.date}</p>
+            </div>
         </div>
-    </div>
     </div>
     `;
     gallery.insertAdjacentHTML('afterend', modalHTML);
-
+    //Code for closing modal window:
+    const modalClose = document.querySelector('.modal-close-btn');
+    modalClose.addEventListener('click', () => {
+        modalClose.parentElement.parentElement.remove();
+    });
 }
 
 // b. Event listener for modal view display:
@@ -80,6 +85,11 @@ gallery.addEventListener('click', (event) => {
     }
 });
 
+
+
+//modalClose.addEventListener('click', () => {
+//    console.log(modalClose);
+//});
 
 // ---------------------------------------  Extra Credit --------------------------- //
 
