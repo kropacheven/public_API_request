@@ -65,7 +65,7 @@ function displayModal(index) {
     </div>
     `;
     gallery.insertAdjacentHTML('afterend', modalHTML);
-    //Code for closing modal window:
+    //Code block for closing modal window functionality:
     const modalClose = document.querySelector('.modal-close-btn');
     modalClose.addEventListener('click', () => {
         modalClose.parentElement.parentElement.remove();
@@ -85,11 +85,6 @@ gallery.addEventListener('click', (event) => {
     }
 });
 
-
-
-//modalClose.addEventListener('click', () => {
-//    console.log(modalClose);
-//});
 
 // ---------------------------------------  Extra Credit --------------------------- //
 
