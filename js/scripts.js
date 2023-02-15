@@ -5,6 +5,7 @@ let employees = [];
 
 
 
+
 // 1. Get and display 12 random users from The Random User Generator API:
 
 // a. Fetch data from random employee external API:
@@ -21,6 +22,7 @@ fetch('https://randomuser.me/api/?results=12')
  */
 function getData(data) {
     employees = data;
+    console.log(employees);
     for (let i = 0; i < data.length; i++ ) {
     const html = `
     <div class="card" data-index=${i}>
@@ -58,7 +60,7 @@ function displayModal(index) {
                 <p class="modal-text cap">${location.city}</p>
                 <hr>
                 <p class="modal-text">${phone}</p>
-                <p class="modal-text">${location.street}, ${location.city}, ${location.state} ${location.postcode}</p>
+                <p class="modal-text">${location.street.number} ${location.street.name}, ${location.city}, ${location.state} ${location.postcode}</p>
                 <p class="modal-text">Birthday: ${dob.date}</p>
             </div>
         </div>
@@ -85,7 +87,7 @@ gallery.addEventListener('click', (event) => {
     }
 });
 
-
+console.log(employees);
 // ---------------------------------------  Extra Credit --------------------------- //
 
 // 1. Programm search bar element:
