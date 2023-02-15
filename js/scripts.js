@@ -86,6 +86,8 @@ gallery.addEventListener('click', (event) => {
 // ---------------------------------------  Extra Credit --------------------------- //
 
 // 1. Programm search bar element:
+
+// a. Capturing and inserting searchbar on the page:
 const searchBar = document.querySelector('.search-container');
 const searchHTML = 
 `
@@ -95,5 +97,8 @@ const searchHTML =
 </form>
 `;
 searchBar.insertAdjacentHTML('beforeend', searchHTML);
+
+
+// b. Search function:
 
 // 2. Programm modal toggle:
