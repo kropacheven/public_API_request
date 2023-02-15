@@ -2,10 +2,6 @@
 const gallery = document.getElementById('gallery');
 let employees = [];
 
-
-
-
-
 // 1. Get and display 12 random users from The Random User Generator API:
 
 // a. Fetch data from random employee external API:
@@ -87,9 +83,17 @@ gallery.addEventListener('click', (event) => {
     }
 });
 
-console.log(employees);
 // ---------------------------------------  Extra Credit --------------------------- //
 
 // 1. Programm search bar element:
+const searchBar = document.querySelector('.search-container');
+const searchHTML = 
+`
+<form action="#" method="get">
+    <input type="search" id="search-input" class="search-input" placeholder="Search...">
+    <input type="submit" value="&#x1F50D;" id="search-submit" class="search-submit">
+</form>
+`;
+searchBar.insertAdjacentHTML('beforeend', searchHTML);
 
 // 2. Programm modal toggle:
