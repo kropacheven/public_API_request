@@ -43,7 +43,7 @@ function getData(data) {
 // a. Function for modal view:
 function displayModal(index) {
     //object destructuring for cleaner code:
-    let {dob, email, location, name, phone, picture} = employees[index];
+    let {cell, dob, email, location, name, picture} = employees[index];
     const modalHTML = 
     `
     <div class="modal-container">
@@ -55,7 +55,7 @@ function displayModal(index) {
                 <p class="modal-text">${email}</p>
                 <p class="modal-text cap">${location.city}</p>
                 <hr>
-                <p class="modal-text">${phone}</p>
+                <p class="modal-text">${cell}</p>
                 <p class="modal-text">${location.street.number} ${location.street.name}, ${location.city}, ${location.state} ${location.postcode}</p>
                 <p class="modal-text">Birthday: ${dob.date}</p>
             </div>
