@@ -60,6 +60,10 @@ function displayModal(index) {
                 <p class="modal-text">Birthday: ${dob.date}</p>
             </div>
         </div>
+        <div class="modal-btn-container">
+            <button type="button" id="modal-prev" class="modal-prev btn">Prev</button>
+            <button type="button" id="modal-next" class="modal-next btn">Next</button>
+        </div>
     </div>
     `;
     gallery.insertAdjacentHTML('afterend', modalHTML);
@@ -68,6 +72,9 @@ function displayModal(index) {
     modalClose.addEventListener('click', () => {
         modalClose.parentElement.parentElement.remove();
     });
+    // Code block for switching previous/next emplloyee (extra credit):
+    const modalPrev = document.getElementById('modal-prev');
+    const modalNext = document.getElementById('modal-next');
 }
 
 // b. Event listener for modal view display:
@@ -101,4 +108,6 @@ searchBar.insertAdjacentHTML('beforeend', searchHTML);
 
 // b. Search function:
 
-// 2. Programm modal toggle:
+
+// 2. Program modal toggle:
+// Put into displayModal() function in upper main section of file
