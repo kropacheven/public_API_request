@@ -40,7 +40,12 @@ function getData(data) {
 
 // 2. Create a modal window for chosen employee:
 
-// a. Function for modal view:
+/**
+ * a. Function for displaying modal view window on the screen as overlay.
+ *
+ * @param {number} index - A number (index of employee card)
+ * @return Injects necessary information into modal window from API request object (chosen by index)
+ */
 function displayModal(index) {
     //object destructuring for cleaner code:
     let {cell, dob, email, location, name, picture} = employees[index];
@@ -135,5 +140,5 @@ function searchFilter(event) {
 searchBar.addEventListener('input', searchFilter);
 
 
-// 2. Program modal toggle:
-// Put into displayModal() function in upper main section of the file
+// 2. Program modal toggle back and forth by using 'Prev' and 'Next' buttons:
+// ^^^Put into displayModal block in upper main section of the file^^^
