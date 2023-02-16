@@ -76,7 +76,6 @@ function displayModal(index) {
     //let indexOfModal = 0;
     const modalPrev = document.getElementById('modal-prev');
     modalPrev.addEventListener('click', () => {
-    let {cell, dob, email, location, name, picture} = employees[index-1];
        console.log(index--); 
     })
 
