@@ -55,7 +55,7 @@ function displayModal(index) {
                 <p class="modal-text">${email}</p>
                 <p class="modal-text cap">${location.city}</p>
                 <hr>
-                <p class="modal-text">${cell}</p>
+                <p class="modal-text">${cell.replace(/^\D*(\d{3})\D*(\d{3,4})\D*(\d{2,5})\D*$/, '($1) $2-$3')}</p>
                 <p class="modal-text">${location.street.number} ${location.street.name}, ${location.city}, ${location.state} ${location.postcode}</p>
                 <p class="modal-text">Birthday: ${dob.date}</p>
             </div>
