@@ -76,6 +76,7 @@ function displayModal(index) {
     //let indexOfModal = 0;
     const modalPrev = document.getElementById('modal-prev');
     modalPrev.addEventListener('click', () => {
+    let {cell, dob, email, location, name, picture} = employees[index-1];
        console.log(index--); 
     })
 
@@ -100,7 +101,7 @@ gallery.addEventListener('click', (event) => {
 
 // ---------------------------------------  Extra Credit --------------------------- //
 
-// 1. Programm search bar element:
+// 1. Program search bar element:
 
 // a. Capturing and inserting searchbar on the page:
 const searchBar = document.querySelector('.search-container');
@@ -112,7 +113,6 @@ const searchHTML =
 </form>
 `;
 searchBar.insertAdjacentHTML('beforeend', searchHTML);
-
 
 // b. Search function:
 function searchFilter(event) {
@@ -132,10 +132,8 @@ function searchFilter(event) {
     });
 }
 
-
 // c. Adding event listener functionality to the searchbar:
 searchBar.addEventListener('input', searchFilter);
-
 
 
 // 2. Program modal toggle:
