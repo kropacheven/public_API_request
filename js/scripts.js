@@ -78,16 +78,15 @@ function displayModal(index) {
         modalClose.parentElement.parentElement.remove();
     });
     // Code block for switching previous/next emplloyee (extra credit):
-    //let indexOfModal = 0;
-    const modalPrev = document.getElementById('modal-prev');
-    modalPrev.addEventListener('click', () => {
-       console.log(index--); 
-    })
+    // const modalPrev = document.getElementById('modal-prev');
+    // modalPrev.addEventListener('click', () => {
+    //    console.log(index--); 
+    // })
 
-    const modalNext = document.getElementById('modal-next');
-    modalNext.addEventListener('click', () => {
-        console.log(index++); 
-     })
+    // const modalNext = document.getElementById('modal-next');
+    // modalNext.addEventListener('click', () => {
+    //     console.log(index++); 
+    //  })
 }
 
 // b. Event listener for modal view display:
@@ -102,6 +101,15 @@ gallery.addEventListener('click', (event) => {
        displayModal(index);
     }
 });
+
+// c. Event listeners for switching/toggling back and forth on modal window:
+
+const modalPrev = document.getElementById('modal-prev');
+console.log(modalPrev);
+
+const modalNext = document.getElementById('modal-next');
+console.log(modalNext)
+
 
 // ---------------------------------------  Extra Credit --------------------------- //
 
