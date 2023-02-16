@@ -117,11 +117,11 @@ searchBar.insertAdjacentHTML('beforeend', searchHTML);
 function searchFilter(event) {
     // Capturing elements to compare:
     let searchName = event.target.value.toLowerCase();
-    let emplloyeeName = document.querySelectorAll('.card-name');
+    let employeeName = document.querySelectorAll('.card-name');
     // Iterating over employee names with search:
-    emplloyeeName.forEach(emplloyeeName => {
-        let name = emplloyeeName.textContent.toLowerCase();
-        let cardOfEmployee = emplloyeeName.parentElement.parentElement;
+    employeeName.forEach(employeeName => {
+        let name = employeeName.textContent.toLowerCase();
+        let cardOfEmployee = employeeName.parentElement.parentElement;
 
         if (name.includes(searchName)) {
             cardOfEmployee.style.display = '';
