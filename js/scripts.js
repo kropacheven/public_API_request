@@ -107,7 +107,28 @@ searchBar.insertAdjacentHTML('beforeend', searchHTML);
 
 
 // b. Search function:
+function searchFilter(event) {
+    // Capturing elements to compare:
+    let searchName = event.target.value.toLowerCase();
+    let emplloyeeName = document.querySelectorAll('.card-name');
+    // Iterating over employee names with search:
+    emplloyeeName.forEach(emplloyeeName => {
+        let name = emplloyeeName.textContent.toLowerCase();
+        let cardOfEmployee = emplloyeeName.parentElement.parentElement;
+
+        if (name.includes(searchName)) {
+            cardOfEmployee.style.display = '';
+        } else {
+            cardOfEmployee.style.display = 'none';
+        }
+    });
+}
+
+
+// c. Adding event listener functionality to the searchbar:
+searchBar.addEventListener('input', searchFilter);
+
 
 
 // 2. Program modal toggle:
-// Put into displayModal() function in upper main section of file
+// Put into displayModal() function in upper main section of the file
