@@ -261,6 +261,10 @@ header h1 {
 /* ===================================== 
    Changes 
 ======================================== */
-body{
-    background-color: white;
+header{
+    background-color: black;
+}
+
+header h1 {
+    color: white;
 }
