@@ -72,21 +72,11 @@ function displayModal(index) {
     </div>
     `;
     gallery.insertAdjacentHTML('afterend', modalHTML);
-    //Code block for closing modal window functionality:
+    //a.1 Code block for closing modal window functionality:
     const modalClose = document.querySelector('.modal-close-btn');
     modalClose.addEventListener('click', () => {
         modalClose.parentElement.parentElement.remove();
     });
-    // Code block for switching previous/next emplloyee (extra credit):
-    // const modalPrev = document.getElementById('modal-prev');
-    // modalPrev.addEventListener('click', () => {
-    //    console.log(index--); 
-    // })
-
-    // const modalNext = document.getElementById('modal-next');
-    // modalNext.addEventListener('click', () => {
-    //     console.log(index++); 
-    //  })
 }
 
 // b. Event listener for modal view display:
@@ -95,32 +85,47 @@ gallery.addEventListener('click', (event) => {
        // selecting the card element based on its proximity to actual element that is clicked
        const card =  event.target.closest('.card');
        // capturing the index of the card of the clicked element
-       const index = card.getAttribute('data-index');
+       let index = card.getAttribute('data-index');
        //console.log(card);
-       //console.log(index);
+       //console.log(typeof index);
+       //console.log(index)
+       let modalIndex = parseInt(index);
        displayModal(index);
+    // b.1 Event listeners for switching/toggling back and forth on modal window:
+       document.body.addEventListener('click', (event) => {
+        if (event.target.classList.contains("modal-prev")) {
+            //console.log(event.target);
+            if (modalIndex !== 0) {
+            modalIndex--;
+            console.log(modalIndex);
+            event.target.parentElement.parentElement.remove();
+            displayModal(modalIndex);
+            } else {
+               modalIndex = 11;
+               event.target.parentElement.parentElement.remove();
+               displayModal(modalIndex);
+            }
+        }
+        });
+        document.body.addEventListener('click', (event) => {
+            if (event.target.classList.contains("modal-next")) {
+            //console.log(event.target);
+            if (modalIndex !== employees.length-1) {
+                modalIndex++;
+                console.log(modalIndex);
+                event.target.parentElement.parentElement.remove();
+                displayModal(modalIndex);
+                } else {
+                    modalIndex = 0;
+                    event.target.parentElement.parentElement.remove();
+                    displayModal(modalIndex);
+                }
+            }
+        });   
     }
 });
 
-// c. Event listeners for switching/toggling back and forth on modal window:
 
-//const modalPrev = document.getElementById('modal-prev');
-//console.log(modalPrev);
-
-//const modalNext = document.getElementById('modal-next');
-//console.log(modalNext)
-
-document.body.addEventListener('click', (event) => {
-    if (event.target.classList.contains("modal-prev")) {
-        console.log(event.target);
-    }
-});
-
-document.body.addEventListener('click', (event) => {
-    if (event.target.classList.contains("modal-next")) {
-        console.log(event.target);
-    }
-});
 
 
 // ---------------------------------------  Extra Credit --------------------------- //
