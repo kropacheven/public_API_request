@@ -89,8 +89,8 @@ gallery.addEventListener('click', (event) => {
        //console.log(card);
        //console.log(typeof index);
        //console.log(index)
-       let modalIndex = parseInt(index);
        displayModal(index);
+       let modalIndex = parseInt(index);
     // b.1 Event listeners for switching/toggling back and forth on modal window:
        document.body.addEventListener('click', (event) => {
         if (event.target.classList.contains("modal-prev")) {
