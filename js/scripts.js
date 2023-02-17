@@ -104,11 +104,23 @@ gallery.addEventListener('click', (event) => {
 
 // c. Event listeners for switching/toggling back and forth on modal window:
 
-const modalPrev = document.getElementById('modal-prev');
-console.log(modalPrev);
+//const modalPrev = document.getElementById('modal-prev');
+//console.log(modalPrev);
 
-const modalNext = document.getElementById('modal-next');
-console.log(modalNext)
+//const modalNext = document.getElementById('modal-next');
+//console.log(modalNext)
+
+document.body.addEventListener('click', (event) => {
+    if (event.target.classList.contains("modal-prev")) {
+        console.log(event.target);
+    }
+});
+
+document.body.addEventListener('click', (event) => {
+    if (event.target.classList.contains("modal-next")) {
+        console.log(event.target);
+    }
+});
 
 
 // ---------------------------------------  Extra Credit --------------------------- //
